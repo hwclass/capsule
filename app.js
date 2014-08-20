@@ -47,13 +47,20 @@ var app = (function () {
         items[x](info || {});
       }
     }
+
+    var init = function() {
+      this.publish('customEventForFirstTestData', {testMessage : 'test message'});
+      this.publish('customEventForSecondTestData', {testMessage : 'test message'});
+      this.publish('customEventForThirdTestData', {testMessage : 'test message'});
+    }
     
     return {
       context : context,
       define : defineContext,
       get : getContext,
       subscribe : subscribe,
-      publish : publish
+      publish : publish,
+      init : init
     }
     
   })();

@@ -19,7 +19,9 @@ app.define('base', {
     	return this;
     },
     init : function () {
-      console.log(this.config.title + ' initialized.');
+      app.subscribe('customEventForFirstTestData', function(args) {
+        console.log(args);
+      });
     }
   }
 });

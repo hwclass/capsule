@@ -19,7 +19,9 @@ app.define('productlist', {
       return this;
     },
     init : function () {
-      console.log(this.config.title + ' initialized.');
+      app.subscribe('customEventForThirdTestData', function(args) {
+        console.log(args);
+      });
     }
   }
 });

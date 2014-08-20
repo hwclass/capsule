@@ -19,7 +19,9 @@ app.define('mainpage', {
       return this;
     },
     init : function () {
-      console.log(this.config.title + ' initialized.');
+      app.subscribe('customEventForSecondTestData', function(args) {
+        console.log(args);
+      });
     }
   }
 });
