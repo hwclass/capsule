@@ -50,8 +50,8 @@ var app = (function () {
     
     return {
       context : context,
-      defineContext : defineContext,
-      getContext : getContext,
+      define : defineContext,
+      get : getContext,
       subscribe : subscribe,
       publish : publish
     }
