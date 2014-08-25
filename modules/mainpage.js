@@ -19,7 +19,7 @@ app.define('mainpage', {
       return this;
     },
     init : function () {
-      app.subscribe('customEventForSecondTestData', function(args) {
+      app.subscribe('customEventForMainPageTestData', function(args) {
         console.log(args);
       });
     }

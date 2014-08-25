@@ -19,7 +19,7 @@ app.define('productlist', {
       return this;
     },
     init : function () {
-      app.subscribe('customEventForThirdTestData', function(args) {
+      app.subscribe('customEventForProductListTestData', function(args) {
         console.log(args);
       });
     }

@@ -4,6 +4,24 @@ app.define('base', {
     config : {
       title : 'base'
     },
+    models : [
+      {
+        dataLayer : function(args) {
+          this.testVar1 = args.testVar1;
+          this.testVar2 = args.testVar2;
+          this.testVar3 = args.testVar3;
+          return this;
+        }
+      },
+      {
+        google_tag_params : function(args) {
+          this.testVar1 = args.testVar1;
+          this.testVar2 = args.testVar2;
+          this.testVar3 = args.testVar3;
+          return this;
+        }
+      }
+    ],
     el : {
       container : document.querySelector('body')
     },
@@ -19,7 +37,7 @@ app.define('base', {
     	return this;
     },
     init : function () {
-      app.subscribe('customEventForFirstTestData', function(args) {
+      app.subscribe('customEventForBaseTestData', function(args) {
         console.log(args);
       });
     }

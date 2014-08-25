@@ -23,6 +23,7 @@ var app = (function () {
       ]
     }
     
+    /* pub-sub topics */
     var topics = {};
     
     var defineContext = function (appName, appObj) {
@@ -30,28 +31,17 @@ var app = (function () {
       context.views[context.views.length-1][appName].init();
     }
     
-    var getContext = function (view) {
+    var getView = function (title) {
       var currentView;
-      for (var index in context.views) {
-        if (context.views[index].config.title == view) {
-          currentView = context.views[index];
-        };
+      if (!utils.isUndefined(title) && !utils.isNull()) {
+        currentView = context.views[0][title];  
       }
       return currentView;
     }
 
     var removeContext = function(title) {
-      /*
-      for (var count=0, len=context.views.length; count < len; count++) {        
-        if (context.views[count].config.title == title) {
-          delete context.views[count][title];
-        }
-      }
-      */
-      for (var index in context.views) {
-        if (context.views[index]) {
-          console.log(context.views[index][title].config);
-        }
+      if (!utils.isUndefined(title) && !utils.isNull()) {
+        delete context.views[0][title];
       }
     }
     
@@ -81,21 +71,39 @@ var app = (function () {
       for(var x = 0; x < items.length; x++) {
         items[x](info || {});
       }
-    }
+    };
+
+    var utils = {
+      isUndefined : function (obj) {
+        return (typeof obj === 'undefined');
+      },
+      isNull : function (obj) {
+        return (typeof obj === 'null');
+      },
+      isAvailable : function (obj) {
+        isAvailable = false;
+        if (!utils.isUndefined(obj) && !utils.isNull(obj)) {
+          isAvailable = true;
+        }
+        return isAvailable;
+      }
+    };
 
     var init = function() {
-      this.publish('customEventForFirstTestData', {testMessage : 'base module initialized.'});
-      this.publish('customEventForSecondTestData', {testMessage : 'mainpage module initialized.'});
-      this.publish('customEventForThirdTestData', {testMessage : 'productlist module initialized.'});
+      this.publish('customEventForBaseTestData', {testMessage : 'base module initialized.'});
+      this.publish('customEventForMainPageTestData', {testMessage : 'mainpage module initialized.'});
+      this.publish('customEventForProductListTestData', {testMessage : 'productlist module initialized.'});
     }
     
     return {
-      context : context,
+      models : context.models,
       define : defineContext,
-      get : getContext,
+      get : getView,
       remove : removeContext,
       subscribe : subscribe,
       publish : publish,
+      views : context.views,
+      utils : utils,
       init : init
     }
     
