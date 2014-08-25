@@ -9,6 +9,7 @@ A small library-like initializing code for dynamic views.
   /*Context : testModule*/
 
   app.define('testModule', {
+
     /**
      * config{} contains configuration properties.
      *
@@ -16,6 +17,7 @@ A small library-like initializing code for dynamic views.
     config : {
       title : 'View Title'
     },
+
     /**
      * models{} contains module-specific model structures.
      *
@@ -38,6 +40,7 @@ A small library-like initializing code for dynamic views.
         }
       }
     ],
+
     /**
      * el{} wraps the elements living in the context of current module.
      *
@@ -45,6 +48,7 @@ A small library-like initializing code for dynamic views.
     el : {
       container : document.querySelector('body')
     },
+
     /**
      * fn{} is used to reach module specific methods / functions.
      *
@@ -57,6 +61,7 @@ A small library-like initializing code for dynamic views.
         return (typeof obj === 'null');
       }
     },
+
     /**
      * getInstance() returns the current context.
      *
@@ -64,6 +69,7 @@ A small library-like initializing code for dynamic views.
     getInstance : function () {
       return this;
     },
+    
     /**
      * init() stars the current module.
      *
