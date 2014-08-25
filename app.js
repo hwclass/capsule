@@ -27,21 +27,21 @@ var app = (function () {
     var topics = {};
     
     var defineContext = function (appName, appObj) {
-      context.views.push(appObj);
-      context.views[context.views.length-1][appName].init();
+      context.views[appName] = Object.create(appObj);
+      utils.initModule(appName);
     }
     
     var getView = function (title) {
       var currentView;
       if (!utils.isUndefined(title) && !utils.isNull()) {
-        currentView = context.views[0][title];  
+        currentView = context.views[title];  
       }
       return currentView;
     }
 
     var removeContext = function(title) {
       if (!utils.isUndefined(title) && !utils.isNull()) {
-        delete context.views[0][title];
+        delete context.views[title];
       }
     }
     
@@ -86,6 +86,9 @@ var app = (function () {
           isAvailable = true;
         }
         return isAvailable;
+      },
+      initModule : function (moduleName) {
+        context.views[moduleName].init();
       }
     };
 
@@ -103,7 +106,6 @@ var app = (function () {
       subscribe : subscribe,
       publish : publish,
       views : context.views,
-      utils : utils,
       init : init
     }
     
