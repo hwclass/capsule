@@ -6,9 +6,9 @@ A small library-like initializing code for dynamic views.
 
 <pre lang="javascript">
 <code>
-  app.define('base', {
+  <b>app.define</b>('testModule', {
     config : {
-      title : 'Base View'
+      title : 'View Title'
     },
     models : [
       {
