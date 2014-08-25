@@ -6,36 +6,47 @@ A small library-like initializing code for dynamic views.
 
 <pre lang="javascript">
 <code>
-app.defineContext('base', { 
-    
-  base : { 
-    
+  app.define('base', {
     config : {
-      title : 'base'
+      title : 'Base View'
     },
-
+    models : [
+      {
+        dataLayer : function(args) {
+          this.testVar1 = args.testVar1;
+          this.testVar2 = args.testVar2;
+          this.testVar3 = args.testVar3;
+          return this;
+        }
+      },
+      {
+        google_tag_params : function(args) {
+          this.testVar1 = args.testVar1;
+          this.testVar2 = args.testVar2;
+          this.testVar3 = args.testVar3;
+          return this;
+        }
+      }
+    ],
     el : {
       container : document.querySelector('body')
     },
-
     fn : {
-      
       isUndefined : function (obj) {
-        return (typeof obj === 'undefined')
+        return (typeof obj === 'undefined');
+      },
+      isNull : function (obj) {
+        return (typeof obj === 'null');
       }
-  
     },
-
     getInstance : function () {
-    	return this;
+      return this;
     },
-
     init : function () {
-      console.log('base initialized...');
-    } 
-    
-  } 
-
-});
+      app.subscribe('customEventForBaseTestData', function(args) {
+        console.log(args);
+      });
+    }
+  });
 </code>
 </pre>
