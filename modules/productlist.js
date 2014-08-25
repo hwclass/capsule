@@ -1,6 +1,7 @@
 /*Context : Product List*/
 
 app.define('productlist', {
+  
   /**
    * config{} contains configuration properties.
    *
@@ -8,6 +9,7 @@ app.define('productlist', {
   config : {
     title : 'Product List View'
   },
+  
   /**
    * models{} contains module-specific model structures.
    *
@@ -30,6 +32,7 @@ app.define('productlist', {
       }
     }
   ],
+  
   /**
    * el{} wraps the elements living in the context of current module.
    *
@@ -37,6 +40,7 @@ app.define('productlist', {
   el : {
     container : document.querySelector('#productlist')
   },
+  
   /**
    * fn{} is used to reach module specific methods / functions.
    *
@@ -49,6 +53,7 @@ app.define('productlist', {
       return (typeof obj === 'null');
     }
   },
+  
   /**
    * getInstance() returns the current context.
    *
@@ -56,6 +61,7 @@ app.define('productlist', {
   getInstance : function () {
     return this;
   },
+  
   /**
    * init() stars the current module.
    *
@@ -65,4 +71,5 @@ app.define('productlist', {
       console.log(args);
     });
   }
+  
 });
