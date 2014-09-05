@@ -1,4 +1,4 @@
-##inheritable-native-js-app-structure
+##capsule
 
 A small library-like initializing code for dynamic views.
 
