@@ -122,6 +122,9 @@ var app = (function () {
     isNull : function (obj) {
       return (typeof obj === 'null');
     },
+    isEmptyString : function(str) {
+      return (str === '');
+    },
     isAvailable : function (obj) {
       isAvailable = false;
       if (!utils.isUndefined(obj) && !utils.isNull(obj)) {
