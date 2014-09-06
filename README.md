@@ -22,24 +22,7 @@ A small library-like initializing code for dynamic views.
      * models{} contains module-specific model structures.
      *
     */
-    models : [
-      {
-        dataLayer : function(args) {
-          this.testVar1 = args.testVar1;
-          this.testVar2 = args.testVar2;
-          this.testVar3 = args.testVar3;
-          return this;
-        }
-      },
-      {
-        google_tag_params : function(args) {
-          this.testVar1 = args.testVar1;
-          this.testVar2 = args.testVar2;
-          this.testVar3 = args.testVar3;
-          return this;
-        }
-      }
-    ],
+    models : [],
 
     /**
      * el{} wraps the elements living in the context of current module.
@@ -53,14 +36,7 @@ A small library-like initializing code for dynamic views.
      * fn{} is used to reach module specific methods / functions.
      *
     */
-    fn : {
-      isUndefined : function (obj) {
-        return (typeof obj === 'undefined');
-      },
-      isNull : function (obj) {
-        return (typeof obj === 'null');
-      }
-    },
+    fn : {},
 
     /**
      * getInstance() returns the current context.
