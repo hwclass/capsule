@@ -1,0 +1,32 @@
+{
+  "name": "capsule",
+  "version": "0.1.0",
+  "description": "A small library-like initializing code for dynamic views.",
+  "main": "index.html",
+  "dependencies": {
+    "node-http-server": "^1.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hwclass/capsule.git"
+  },
+  "keywords": [
+    "library",
+    "initialize",
+    "view",
+    "scalable",
+    "maintainable",
+    "large",
+    "apps"
+  ],
+  "author": "@hwclass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hwclass/capsule/issues"
+  },
+  "homepage": "https://github.com/hwclass/capsule"
+}

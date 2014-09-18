@@ -1,7 +1,7 @@
 /*Context : Main Page*/
 
 app.define('mainpage', {
-  
+
   /**
    * config{} contains configuration properties.
    *
@@ -9,7 +9,7 @@ app.define('mainpage', {
   config : {
     title : 'Main Page View'
   },
-  
+
   /**
    * models{} contains module-specific model structures.
    *
@@ -32,7 +32,7 @@ app.define('mainpage', {
       }
     }
   ],
-  
+
   /**
    * el{} wraps the elements living in the context of current module.
    *
@@ -40,7 +40,7 @@ app.define('mainpage', {
   el : {
     container : document.querySelector('#mainpage')
   },
-  
+
   /**
    * fn{} is used to reach module specific methods / functions.
    *
@@ -51,9 +51,12 @@ app.define('mainpage', {
     },
     isNull : function (obj) {
       return (typeof obj === 'null');
+    },
+    log : function (message) {
+      console.log(message);
     }
   },
-  
+
   /**
    * getInstance() returns the current context.
    *
@@ -61,15 +64,17 @@ app.define('mainpage', {
   getInstance : function () {
     return this;
   },
-  
+
   /**
    * init() stars the current module.
    *
   */
   init : function () {
+
     app.subscribe('customEventForMainPageTestData', function(args) {
       console.log(args);
     });
+    
   }
-  
+
 });
