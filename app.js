@@ -1,13 +1,13 @@
 /*Context : App*/
 
 var app = (function () {
-    
+
   /**
    * context{} wraps the modules living in the context of app mediator.
    *
   */
   var context = {
-    
+
     /**
      * views[] contains the modules.
      *
@@ -19,14 +19,15 @@ var app = (function () {
      *
     */
     models : []
-  }
     
+  }
+
   /**
    * topics{} wraps current custom event types and their datas.
    *
   */
   var topics = {};
-  
+
   /**
    * defineContext() creates a new module with its name and properties.
    *
@@ -35,7 +36,7 @@ var app = (function () {
     context.views[appName] = Object.create(appObj);
     utils.initModule(appName);
   }
-  
+
   /**
    * getModule() returns a module given its name.
    *
@@ -43,7 +44,7 @@ var app = (function () {
   var getModule = function (title) {
     var currentView;
     if (!utils.isUndefined(title) && !utils.isNull()) {
-      currentView = context.views[title];  
+      currentView = context.views[title];
     }
     return currentView;
   }
@@ -57,7 +58,7 @@ var app = (function () {
       delete context.views[title];
     }
   }
-  
+
   /**
    * subscribe() joins a topic with a custom event listener.
    *
@@ -78,7 +79,7 @@ var app = (function () {
       }
     })(index);
   }
-  
+
   /**
    * publish() sends a data or callback reply to the specified custom event listeners.
    *
@@ -129,7 +130,7 @@ var app = (function () {
     this.publish('customEventForMainPageTestData', {testMessage : 'mainpage module initialized.'});
     this.publish('customEventForProductListTestData', {testMessage : 'productlist module initialized.'});
   }
-  
+
   return {
     models : context.models,
     define : defineContext,
@@ -140,5 +141,5 @@ var app = (function () {
     views : context.views,
     init : init
   }
-  
+
 })();
