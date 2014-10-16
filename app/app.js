@@ -42,8 +42,14 @@ var app = (function () {
   */
   var getModule = function (title) {
     var currentView;
-    if (!utils.isUndefined(title) && !utils.isNull()) {
-      currentView = context.views[title];  
+    if (!utils.isUndefined(title) && !utils.isNull(title)) {
+      if (!utils.isUndefined(context.views[title]) && !utils.isNull(context.views[title])) {
+      	currentView = context.views[title];
+      } else {
+      	utils.log('No module with name ' + title);
+      }
+    } else {
+    	utils.log('No module with name ' + title);
     }
     return currentView;
   }
@@ -114,6 +120,9 @@ var app = (function () {
         isAvailable = true;
       }
       return isAvailable;
+    },
+    log : function (message) {
+    	console.log(message);
     },
     initModule : function (moduleName) {
       context.views[moduleName].init();
