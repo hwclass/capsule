@@ -67,7 +67,7 @@ app.define('base', {
    *
   */
   init : function () {
-    app.subscribe('customEventForBaseTestData', function(args) {
+    app.subscribe('customTopicForBaseTestData', function(args) {
       console.log(args);
     });
   }

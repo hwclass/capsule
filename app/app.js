@@ -125,9 +125,15 @@ var app = (function () {
    *
   */
   var init = function() {
-    this.publish('customEventForBaseTestData', {testMessage : 'base module initialized.'});
-    this.publish('customEventForMainPageTestData', {testMessage : 'mainpage module initialized.'});
-    this.publish('customEventForProductListTestData', {testMessage : 'productlist module initialized.'});
+
+  	/*Send data to customEventForBaseTestData topic as testMessage*/
+    this.publish('customTopicForBaseTestData', {testMessage : 'base module initialized.'});
+    
+    /*Send data to customEventForMainPageTestData topic as testMessage*/
+    this.publish('customTopicForMainPageTestData', {testMessage : 'mainpage module initialized.'});
+
+    /*Send data to customEventForProductListTestData topic as testMessage*/
+    this.publish('customTopicForProductListTestData', {testMessage : 'productlist module initialized.'});
   }
   
   return {

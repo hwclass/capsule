@@ -1,13 +1,13 @@
-/*Context : Product List*/
+/*Context : Main Page*/
 
-app.define('productlist', {
+app.define('mainpage', {
   
   /**
    * config{} contains configuration properties.
    *
   */
   config : {
-    title : 'Product List View'
+    title : 'Main Page View'
   },
   
   /**
@@ -38,7 +38,7 @@ app.define('productlist', {
    *
   */
   el : {
-    container : document.querySelector('#productlist')
+    container : document.querySelector('#mainpage')
   },
   
   /**
@@ -67,7 +67,7 @@ app.define('productlist', {
    *
   */
   init : function () {
-    app.subscribe('customEventForProductListTestData', function(args) {
+    app.subscribe('customTopicForMainPageTestData', function(args) {
       console.log(args);
     });
   }
