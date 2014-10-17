@@ -19,7 +19,11 @@ var app = (function () {
      *
     */
     models : []
-    
+
+  }
+
+  var el = {
+  	messagePane : document.getElementById('messagePane')
   }
     
   /**
@@ -154,6 +158,7 @@ var app = (function () {
     subscribe : subscribe,
     publish : publish,
     views : context.views,
+    el : el,
     init : init
   }
   

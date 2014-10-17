@@ -66,9 +66,15 @@ app.define('productlist', {
    *
   */
   init : function () {
+
+  	/*getting instance*/
+  	var self = this.getInstance();
+    
+    /*subscribind the message for customTopicForProductListTestData topic*/
     app.subscribe('customTopicForProductListTestData', function(args) {
-      console.log(args);
+      app.el.messagePane.innerHTML += args.testMessage;
     });
+
   }
   
 });

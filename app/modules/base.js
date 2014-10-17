@@ -36,8 +36,7 @@ app.define('base', {
    *
   */
   el : {
-    container : document.querySelector('body'),
-    messagePane : document.getElementById('messagePane')
+    container : document.querySelector('body')
   },
 
   /**
@@ -67,10 +66,12 @@ app.define('base', {
   */
   init : function () {
   	
+  	/*getting instance*/
   	var self = this.getInstance();
     
+    /*subscribind the message for customTopicForBaseTestData topic*/
     app.subscribe('customTopicForBaseTestData', function(args) {
-      self.el.messagePane.innerHTML += args.testMessage;
+      app.el.messagePane.innerHTML += args.testMessage + '<br>';
     });
     
   }

@@ -66,9 +66,15 @@ app.define('mainpage', {
    *
   */
   init : function () {
+
+  	/*getting instance*/
+  	var self = this.getInstance();
+    
+    /*subscribind the message for customTopicForMainPageTestData topic*/
     app.subscribe('customTopicForMainPageTestData', function(args) {
-      console.log(args);
+      app.el.messagePane.innerHTML += args.testMessage + '<br>';
     });
+
   }
   
 });
