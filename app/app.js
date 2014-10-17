@@ -19,6 +19,7 @@ var app = (function () {
      *
     */
     models : []
+    
   }
     
   /**

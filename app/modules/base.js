@@ -14,17 +14,15 @@ app.define('base', {
    * models{} contains module-specific model structures.
    *
   */
-  models : [
-    {
-      dataLayer : function(args) {
+  models : [{
+      modelExmampleForBaseModule1 : function(args) {
         this.testVar1 = args.testVar1;
         this.testVar2 = args.testVar2;
         this.testVar3 = args.testVar3;
         return this;
       }
-    },
-    {
-      google_tag_params : function(args) {
+    },{
+      modelExmampleForBaseModule2 : function(args) {
         this.testVar1 = args.testVar1;
         this.testVar2 = args.testVar2;
         this.testVar3 = args.testVar3;
@@ -38,7 +36,8 @@ app.define('base', {
    *
   */
   el : {
-    container : document.querySelector('body')
+    container : document.querySelector('body'),
+    messagePane : document.getElementById('messagePane')
   },
 
   /**
@@ -67,9 +66,13 @@ app.define('base', {
    *
   */
   init : function () {
+  	
+  	var self = this.getInstance();
+    
     app.subscribe('customTopicForBaseTestData', function(args) {
-      console.log(args);
+      self.el.messagePane.innerHTML += args.testMessage;
     });
+    
   }
   
 });

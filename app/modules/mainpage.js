@@ -14,9 +14,8 @@ app.define('mainpage', {
    * models{} contains module-specific model structures.
    *
   */
-  models : [
-    {
-      dataLayer : function(args) {
+  models : [{
+      modelExmampleForMainModule1 : function(args) {
         this.testVar1 = args.testVar1;
         this.testVar2 = args.testVar2;
         this.testVar3 = args.testVar3;
@@ -24,7 +23,7 @@ app.define('mainpage', {
       }
     },
     {
-      google_tag_params : function(args) {
+      modelExmampleForMainModule2 : function(args) {
         this.testVar1 = args.testVar1;
         this.testVar2 = args.testVar2;
         this.testVar3 = args.testVar3;
