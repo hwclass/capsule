@@ -1,4 +1,4 @@
-/*Context : Base*/
+/*Module : Base*/
 
 app.define('base', {
 
@@ -17,15 +17,11 @@ app.define('base', {
   models : [{
       modelExmampleForBaseModule1 : function(args) {
         this.testVar1 = args.testVar1;
-        this.testVar2 = args.testVar2;
-        this.testVar3 = args.testVar3;
         return this;
       }
     },{
       modelExmampleForBaseModule2 : function(args) {
         this.testVar1 = args.testVar1;
-        this.testVar2 = args.testVar2;
-        this.testVar3 = args.testVar3;
         return this;
       }
     }

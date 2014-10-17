@@ -1,4 +1,4 @@
-/*Context : Product List*/
+/*Module : Product List*/
 
 app.define('productlist', {
   
@@ -17,16 +17,12 @@ app.define('productlist', {
   models : [{
       modelExmampleForProductListModule1 : function(args) {
         this.testVar1 = args.testVar1;
-        this.testVar2 = args.testVar2;
-        this.testVar3 = args.testVar3;
         return this;
       }
     },
     {
       modelExmampleForProductListModule2 : function(args) {
         this.testVar1 = args.testVar1;
-        this.testVar2 = args.testVar2;
-        this.testVar3 = args.testVar3;
         return this;
       }
     }

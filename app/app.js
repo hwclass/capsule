@@ -1,4 +1,4 @@
-/*Context : App*/
+/*Mediator : App*/
 
 var app = (function () {
     

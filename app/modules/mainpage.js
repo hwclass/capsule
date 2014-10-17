@@ -1,4 +1,4 @@
-/*Context : Main Page*/
+/*Module : Main Page*/
 
 app.define('mainpage', {
   
@@ -17,16 +17,12 @@ app.define('mainpage', {
   models : [{
       modelExmampleForMainModule1 : function(args) {
         this.testVar1 = args.testVar1;
-        this.testVar2 = args.testVar2;
-        this.testVar3 = args.testVar3;
         return this;
       }
     },
     {
       modelExmampleForMainModule2 : function(args) {
         this.testVar1 = args.testVar1;
-        this.testVar2 = args.testVar2;
-        this.testVar3 = args.testVar3;
         return this;
       }
     }
