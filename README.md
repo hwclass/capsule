@@ -1,6 +1,6 @@
 ##capsule.js
 
-A small library-like initializing code for dynamic views.
+A small library initializing code for dynamic views.
 
 ###Usage
 
@@ -55,7 +55,7 @@ A small library-like initializing code for dynamic views.
         console.log(args);
       });
     }
-    
+
   });
 </code>
 </pre>
