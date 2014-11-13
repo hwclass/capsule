@@ -1,8 +1,8 @@
-##capsule
+##capsule.js
 
 A small library-like initializing code for dynamic views.
 
-###usage
+###Usage
 
 <pre lang="javascript">
 <code>
