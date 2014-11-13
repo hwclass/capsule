@@ -55,6 +55,7 @@ A small library-like initializing code for dynamic views.
         console.log(args);
       });
     }
+    
   });
 </code>
 </pre>
