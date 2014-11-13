@@ -1,6 +1,6 @@
 ##capsule.js
 
-A small library initializing code for dynamic views.
+This attitude is a modular javascript architechture boilerplate. This is a small library initializing code for dynamic views.
 
 ###Usage
 
