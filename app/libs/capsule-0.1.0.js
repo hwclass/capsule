@@ -51,10 +51,10 @@ var capsule = (function () {
       if (!utils.isUndefined(context.views[title]) && !utils.isNull(context.views[title])) {
         currentView = context.views[title];
       } else {
-        utils.log('No module with name ' + title);
+        utils.log('No module called' + title);
       }
     } else {
-      utils.log('No module with name ' + title);
+      utils.log('No module called ' + title);
     }
     return currentView;
   }
